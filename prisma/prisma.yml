@@ -1,0 +1,12 @@
+#endpoint: ''
+endpoint: https://us1.prisma.sh/lucas-bernardes-9b057c/hackernews-node/dev
+
+datamodel: datamodel.prisma
+
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client
+
+hooks:
+  post-deploy:
+    - prisma generate
